@@ -55,7 +55,7 @@ def user_table(request):
         with open(config_file, 'w') as fp:
             for item in table_header:
                 fp.write("%s | " % item)
-            fp.write("\n" + "-"*55)
+            fp.write("\n" + "-"*55 + "\n")
     
     with open(config_file, 'r') as fp:
         for line in fp.readlines():
@@ -79,7 +79,7 @@ def register(update: Update, context: CallbackContext) -> None:
     print('You talk with user {} ({}) and his user ID: {} '.format(user['full_name'], user['username'], user['id']))
     if str(user['id']) not in user_table('users'):
         with open(config_file, 'a') as fp:
-            fp.write("\n" + user['full_name'] + " | " + user['username']  + " | " + str(user['id']) + " | ")
+            fp.write(user['full_name'] + " | " + user['username']  + " | " + str(user['id']) + " | " + "\n")
         update.message.reply_text('Registration complete! Notify your admin to update database with your MAC address.')
     else:
         update.message.reply_text('Seems like you are already registered! Try using /wol command.')
