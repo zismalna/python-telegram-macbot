@@ -14,7 +14,7 @@ Then */wol* can be used to wake up PCs.
 Press Ctrl-C on the command line or send a signal to the process to stop the bot.
 
 ## Integration
-The config file is created in the directory the programm is running by default. You can change it by editing *congig_file* value.
+The config file is created in the directory the programm is running by default. You can change it by editing *config_file* value.
 Can be self-started and monitored by using systemd unit file.
 
 ## Testing
