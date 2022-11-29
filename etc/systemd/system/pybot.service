@@ -1,0 +1,11 @@
+[Unit]
+Description=Telegram bot for waking up user PCs
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /opt/python_telegram_macbot/main.py
+
+[Install]
+WantedBy=multi-user.target
